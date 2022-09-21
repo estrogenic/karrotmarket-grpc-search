@@ -1,0 +1,28 @@
+syntax = "proto3";
+package search;
+
+//python -m grpc_tools.protoc -I./ --python_out=. --grpc_python_out=. ./search.proto
+
+message Query {
+    string keyword = 1;  // required
+    int32 region_ids = 2;  // required
+    int32 post_per_page = 3;  // required
+    string page_token = 4;  // not required
+    int32 c4 = 5;  // 1
+    int32 c5 = 6;  // 5
+    int32 unknown = 10;
+    string feedback1 = 11;  // "query"
+    int32 c8 = 14;  // 1
+    string feedback2 = 15;  // "typed", "resent"
+    string feedback3 = 16;  // "home"
+}
+
+message Search {
+    int32 request_id = 1;  // required
+    reserved 2 to 11;
+    string user_agent = 12;
+    string device_id = 13;
+    reserved 14 to 105;
+    repeated Query query_data = 106;  // required
+}
+//gRPC

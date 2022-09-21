@@ -1,0 +1,65 @@
+syntax = "proto3";
+package response;
+
+// protoc --decode=response.Response response.proto < response.bin
+
+message Docs {
+  int64 doc_id_1 = 1;
+  string search_parm = 2;
+  string doc_id_2 = 3;
+  reserved 4 to 9;
+  int32 doc_id_3 = 10;
+  int32 uk4_1 = 11;
+  int32 location_int = 12;
+  string location_str = 13;
+  int32 uk4_4 = 14;
+  int32 uk4_5 = 15;
+  int32 uk4_6 = 16;
+  int32 uk4_7 = 17;
+  string uk4_8 = 18;
+  reserved 19;
+  message Docs2 {
+    int64 uk1_1 = 1;
+  }
+  Docs2 uk4_9 = 20;
+  string title = 21;
+  string content = 22;
+  reserved 23 to 25;
+  message Docs3 {
+    int32 uk2_1 = 1;
+    int32 uk2_2 = 2;
+  }
+  Docs3 uk4_15 = 26;
+  Docs3 uk4_16 = 27;
+  reserved 28 to 40;
+  message Docs4 {
+    string uk3_1 = 1;
+    string uk3_2 = 2;
+    string uk3_3 = 3;
+    string uk3_4 = 4;
+    int32 uk3_5 = 5;
+    int32 uk3_6 = 6;
+    string image_1 = 7;
+    string image_2 = 8;
+    string image_3 = 9;
+    int32 uk3_10 = 10;
+    string uk3_11 = 11;
+  }
+  Docs4 uk4_18 = 41;
+}
+
+message Response {
+  reserved 1 to 10;
+  string uk1 = 11;
+  string uk2 = 12;
+  message Response2 {
+    string uk3_1 = 1;
+    int64 uk3_2 = 2;
+  }
+  Response2 uk3 = 13;
+  reserved 14 to 105;
+  message Response3 {
+    repeated Docs doc_data = 1;
+  }
+  Response3 doc_list = 106;
+}
